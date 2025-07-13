@@ -48,7 +48,7 @@ import { ProcessingMetrics } from '@/types';
 
 interface RiskAnalyticsDashboardProps {
   metrics: ProcessingMetrics;
-  transactions?: any[];
+  transactions?: unknown[];
   isLoading?: boolean;
 }
 
@@ -129,7 +129,7 @@ export function RiskAnalyticsDashboard({ metrics, isLoading }: RiskAnalyticsDash
   // Currency risk analysis
   const currencyRiskData = useMemo(() => {
     return Object.entries(metrics.currencyDistribution)
-      .filter(([_, data]) => data.count > 0)
+      .filter(([, data]) => data.count > 0)
       .map(([currency, data]) => {
         const totalRisk = Object.values(data.riskDistribution).reduce((sum, count) => sum + count, 0);
         const riskScore = totalRisk > 0 ? 

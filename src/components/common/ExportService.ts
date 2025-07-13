@@ -153,7 +153,7 @@ export class ExportService {
       transactions: options.includeMetadata 
         ? transactions 
         : transactions.map(txn => {
-            const { metadata, validationResults, ...basicData } = txn;
+            const { metadata: _, validationResults: __, ...basicData } = txn;
             return basicData;
           })
     };
@@ -179,14 +179,13 @@ export class ExportService {
   ): void {
     // For now, create a simple text-based report
     // In a real implementation, you would use a library like jsPDF
-    const reportContent = this.generatePDFContent(transactions, options);
+    const reportContent = this.generatePDFContent(transactions);
     const timestamp = new Date().toISOString().split('T')[0];
     this.downloadFile(reportContent, `transaction-report-${timestamp}.txt`, 'text/plain');
   }
 
   private static generatePDFContent(
-    transactions: FinancialTransaction[], 
-    _options: ExportOptions
+    transactions: FinancialTransaction[]
   ): string {
     const timestamp = new Date().toISOString();
     const summary = this.generateSummaryStats(transactions);

@@ -31,15 +31,15 @@ import {
 } from '@tabler/icons-react';
 
 interface DataTransformationViewerProps {
-  onTransformationComplete?: (result: any) => void;
+  onTransformationComplete?: (result: unknown) => void;
 }
 
 interface TransformationStep {
   id: string;
   name: string;
   description: string;
-  input: any;
-  output: any;
+  input: unknown;
+  output: unknown;
   status: 'pending' | 'running' | 'completed' | 'error';
   duration?: number;
   icon: React.ReactElement;
@@ -167,9 +167,9 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
     onTransformationComplete?.(transformationSteps[transformationSteps.length - 1].output);
   };
 
-  const generateStepOutput = (stepIndex: number): any => {
+  const generateStepOutput = (stepIndex: number): unknown => {
     switch (stepIndex) {
-      case 0: // XML Parsing
+      case 0: { // XML Parsing
         return {
           messageId: "STMT20231231001",
           accountId: "SG12DBSS12345678901234",
@@ -182,8 +182,9 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
             reference: "Consulting fees Q4"
           }]
         };
+      }
 
-      case 1: // Data Extraction
+      case 1: { // Data Extraction
         return {
           id: `txn-${Date.now()}`,
           entryRef: `TXN-${Math.floor(Math.random() * 1000)}-20231231`,
@@ -204,8 +205,9 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
             accountId: "SG12DBSS12345678901234"
           }
         };
+      }
 
-      case 2: // FX Conversion
+      case 2: { // FX Conversion
         const fxRate = FX_RATES[`${selectedCurrency}-SGD` as keyof typeof FX_RATES] || 1;
         const convertedAmount = amount * fxRate;
         
@@ -234,8 +236,9 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
             confidence: 95
           }
         };
+      }
 
-      case 3: // Risk Assessment
+      case 3: { // Risk Assessment
         const previousOutput = generateStepOutput(2);
         const riskLevel = amount > 10000 ? 'HIGH' : amount > 5000 ? 'MEDIUM' : 'LOW';
         
@@ -254,6 +257,7 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
           categories: ['REVENUE'],
           tags: ['consulting', 'international', selectedCurrency.toLowerCase()]
         };
+      }
 
       default:
         return null;

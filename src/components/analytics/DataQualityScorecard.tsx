@@ -137,7 +137,7 @@ export function DataQualityScorecard({ transactions }: DataQualityScorecardProps
     });
 
     const inconsistentCounterparties = Array.from(counterpartyMap.entries())
-      .filter(([_, accounts]) => accounts.size > 1);
+      .filter(([, accounts]) => accounts.size > 1);
     const counterpartyScore = Math.max(0, 100 - (inconsistentCounterparties.length / counterpartyMap.size) * 100);
 
     metrics.push({
@@ -244,7 +244,7 @@ export function DataQualityScorecard({ transactions }: DataQualityScorecardProps
     const summary = metrics.reduce((acc, metric) => {
       acc[`${metric.status}Count`]++;
       return acc;
-    }, { excellentCount: 0, goodCount: 0, warningCount: 0, criticalCount: 0 } as any);
+    }, { excellentCount: 0, goodCount: 0, warningCount: 0, criticalCount: 0 } as { excellentCount: number; goodCount: number; warningCount: number; criticalCount: number });
 
     // Generate action items
     const actionItems = [];

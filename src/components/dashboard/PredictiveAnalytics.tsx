@@ -44,7 +44,7 @@ import { ProcessingMetrics } from '@/types';
 
 interface PredictiveAnalyticsProps {
   metrics: ProcessingMetrics;
-  transactions?: any[];
+  transactions?: unknown[];
   isLoading?: boolean;
 }
 

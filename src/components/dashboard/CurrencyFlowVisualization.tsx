@@ -43,7 +43,7 @@ import { ProcessingMetrics, CurrencyCode } from '@/types';
 
 interface CurrencyFlowVisualizationProps {
   metrics: ProcessingMetrics;
-  transactions?: any[];
+  transactions?: unknown[];
   isLoading?: boolean;
 }
 
@@ -88,7 +88,7 @@ export function CurrencyFlowVisualization({ metrics, isLoading }: CurrencyFlowVi
   // Calculate currency flow data
   const currencyFlowData = useMemo(() => {
     const activeCurrencies = Object.entries(metrics.currencyDistribution)
-      .filter(([_, data]) => data.count > 0)
+      .filter(([, data]) => data.count > 0)
       .map(([currency, data]) => ({
         currency: currency as CurrencyCode,
         count: data.count,
@@ -142,7 +142,7 @@ export function CurrencyFlowVisualization({ metrics, isLoading }: CurrencyFlowVi
       const date = new Date();
       date.setDate(date.getDate() - (days - i - 1));
       
-      const data: any = {
+      const data: Record<string, number | string> = {
         date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
         fullDate: date.toISOString(),
         totalVolume: 0,

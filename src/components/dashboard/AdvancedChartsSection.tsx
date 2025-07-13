@@ -38,7 +38,7 @@ import { ProcessingMetrics } from '@/types';
 
 interface AdvancedChartsSectionProps {
   metrics: ProcessingMetrics;
-  transactions?: any[];
+  transactions?: unknown[];
   isLoading?: boolean;
 }
 
@@ -106,7 +106,7 @@ export function AdvancedChartsSection({ metrics, isLoading }: AdvancedChartsSect
   // Currency distribution pie chart data
   const currencyData = useMemo(() => {
     return Object.entries(metrics.currencyDistribution)
-      .filter(([_, data]) => data.count > 0)
+      .filter(([, data]) => data.count > 0)
       .map(([currency, data]) => ({
         name: currency,
         value: data.count,
