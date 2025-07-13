@@ -139,8 +139,10 @@ export function ReconciliationPage() {
   }, [transactions, searchTerm, statusFilter, riskFilter, sortField, sortDirection]);
 
   const handleTransactionClick = useCallback((transaction: FinancialTransaction) => {
+    console.log('Transaction clicked:', transaction);
     setSelectedTransaction(transaction);
     setModalOpened(true);
+    console.log('Modal should be opening...');
   }, []);
 
   const handleModalClose = useCallback(() => {

@@ -76,7 +76,7 @@ A comprehensive financial reconciliation dashboard built with React, TypeScript,
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/sivasub987/ledger-reconciliation-dashboard.git
+   git clone https://github.com/siva-sub/ledger-reconciliation-dashboard.git
    cd ledger-reconciliation-dashboard
    ```
 
@@ -208,4 +208,4 @@ This project is available for use under standard open source practices.
 
 ⭐ **Star this repository if you find it helpful!**
 
-🔗 **Live Demo**: [https://sivasub987.github.io/ledger-reconciliation-dashboard/](https://sivasub987.github.io/ledger-reconciliation-dashboard/)
+🔗 **Live Demo**: [https://siva-sub.github.io/ledger-reconciliation-dashboard/](https://siva-sub.github.io/ledger-reconciliation-dashboard/)
