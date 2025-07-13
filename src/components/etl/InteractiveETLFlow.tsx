@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Card,
   Text,
@@ -79,9 +79,9 @@ export function InteractiveETLFlow({ pipeline, onStepClick, autoPlay = false }: 
     if (autoPlay) {
       startSimulation();
     }
-  }, [autoPlay]);
+  }, [autoPlay, startSimulation]);
 
-  const startSimulation = () => {
+  const startSimulation = useCallback(() => {
     setSimulation(prev => ({ ...prev, isRunning: true, currentStep: 0, stepProgress: 0, totalProgress: 0 }));
     
     const totalSteps = pipeline.steps.length;
@@ -123,7 +123,7 @@ export function InteractiveETLFlow({ pipeline, onStepClick, autoPlay = false }: 
     };
 
     runStep();
-  };
+  }, [pipeline.steps.length]);
 
   const pauseSimulation = () => {
     setSimulation(prev => ({ ...prev, isRunning: false }));

@@ -35,7 +35,7 @@ interface ValidationRule {
   category: 'schema' | 'business' | 'data-quality' | 'compliance';
   severity: 'error' | 'warning' | 'info';
   example: {
-    input: any;
+    input: Record<string, unknown>;
     expected: boolean;
     reason: string;
   };
@@ -45,7 +45,7 @@ interface ValidationResult {
   ruleId: string;
   passed: boolean;
   message: string;
-  value?: any;
+  value?: unknown;
   severity: 'error' | 'warning' | 'info';
 }
 
@@ -132,7 +132,7 @@ export function ValidationExamples() {
   const [isValidating, setIsValidating] = useState(false);
   const [showLiveDemo, setShowLiveDemo] = useState(false);
 
-  const runValidation = async (input: any) => {
+  const runValidation = async (input: Record<string, unknown>) => {
     setIsValidating(true);
     setValidationResults([]);
 
@@ -149,12 +149,12 @@ export function ValidationExamples() {
     setIsValidating(false);
   };
 
-  const simulateValidation = (rule: ValidationRule, input: any): ValidationResult => {
+  const simulateValidation = (rule: ValidationRule, input: Record<string, unknown>): ValidationResult => {
     // Simulate validation logic for demo purposes
-    const amount = parseFloat(input.amount) || 0; // Declare amount here for use in all cases
+    const amount = parseFloat(input.amount as string) || 0; // Declare amount here for use in all cases
     
     switch (rule.id) {
-      case 'required-fields':
+      case 'required-fields': {
         const hasRequired = input.amount && input.currency && input.date;
         return {
           ruleId: rule.id,
@@ -162,8 +162,9 @@ export function ValidationExamples() {
           message: hasRequired ? 'All required fields are present' : 'Missing required fields',
           severity: rule.severity
         };
+      }
       
-      case 'amount-validation':
+      case 'amount-validation': {
         const withinLimit = amount <= 100000;
         return {
           ruleId: rule.id,
@@ -172,10 +173,11 @@ export function ValidationExamples() {
           value: amount,
           severity: rule.severity
         };
+      }
       
-      case 'currency-code':
+      case 'currency-code': {
         const validCurrencies = ['USD', 'EUR', 'GBP', 'SGD', 'JPY', 'CNY', 'AUD', 'CHF'];
-        const isValidCurrency = validCurrencies.includes(input.currency);
+        const isValidCurrency = validCurrencies.includes(input.currency as string);
         return {
           ruleId: rule.id,
           passed: isValidCurrency,
@@ -183,8 +185,9 @@ export function ValidationExamples() {
           value: input.currency,
           severity: rule.severity
         };
+      }
       
-      case 'duplicate-check':
+      case 'duplicate-check': {
         // Simulate duplicate check (random for demo)
         const isDuplicate = Math.random() < 0.2; // 20% chance of duplicate
         return {
@@ -193,8 +196,9 @@ export function ValidationExamples() {
           message: isDuplicate ? 'Potential duplicate transaction detected' : 'No duplicates found',
           severity: rule.severity
         };
+      }
       
-      case 'risk-assessment':
+      case 'risk-assessment': {
         const riskLevel = amount > 50000 ? 'HIGH' : amount > 10000 ? 'MEDIUM' : 'LOW';
         return {
           ruleId: rule.id,
@@ -203,9 +207,10 @@ export function ValidationExamples() {
           value: riskLevel,
           severity: rule.severity
         };
+      }
       
-      case 'date-validation':
-        const transactionDate = new Date(input.date);
+      case 'date-validation': {
+        const transactionDate = new Date(input.date as string);
         const isValidDate = transactionDate <= new Date() && transactionDate >= new Date('2020-01-01');
         return {
           ruleId: rule.id,
@@ -214,6 +219,7 @@ export function ValidationExamples() {
           value: input.date,
           severity: rule.severity
         };
+      }
       
       default:
         return {
@@ -312,7 +318,7 @@ export function ValidationExamples() {
                       try {
                         const input = JSON.parse(customInput || '{}');
                         runValidation(input);
-                      } catch (e) {
+                      } catch (_) {
                         alert('Invalid JSON format');
                       }
                     }}

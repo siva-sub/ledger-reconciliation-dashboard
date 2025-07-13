@@ -86,7 +86,7 @@ interface ExecutiveSummaryProps {
 
 export function ExecutiveSummary({ transactions, timeframe }: ExecutiveSummaryProps) {
   const executiveMetrics = useMemo(() => {
-    return calculateExecutiveMetrics(transactions, timeframe);
+    return calculateExecutiveMetrics(transactions);
   }, [transactions, timeframe]);
 
   const getChangeIcon = (change: number) => {
@@ -490,7 +490,7 @@ export function ExecutiveSummary({ transactions, timeframe }: ExecutiveSummaryPr
   );
 }
 
-function calculateExecutiveMetrics(transactions: FinancialTransaction[], _timeframe: string): ExecutiveMetrics {
+function calculateExecutiveMetrics(transactions: FinancialTransaction[]): ExecutiveMetrics {
   const totalValue = transactions.reduce((sum, t) => sum + t.amount.original, 0);
   const matchedTransactions = transactions.filter(t => t.reconciliationStatus === 'MATCHED');
   const highRiskTransactions = transactions.filter(t => t.riskLevel === 'HIGH');

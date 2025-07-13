@@ -63,7 +63,7 @@ export function ReconciliationPage() {
 
   // Smart search functionality
   const filteredTransactions = useMemo(() => {
-    let filtered = transactions.filter(transaction => {
+    const filtered = transactions.filter(transaction => {
       const matchesSearch = !searchTerm || 
         transaction.entryRef.toLowerCase().includes(searchTerm.toLowerCase()) ||
         transaction.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -78,8 +78,8 @@ export function ReconciliationPage() {
 
     // Sort transactions
     filtered.sort((a, b) => {
-      let aValue: any = a[sortField];
-      let bValue: any = b[sortField];
+      let aValue: unknown = a[sortField as keyof typeof a];
+      let bValue: unknown = b[sortField as keyof typeof b];
       
       // Handle nested properties
       if (sortField === 'amount') {

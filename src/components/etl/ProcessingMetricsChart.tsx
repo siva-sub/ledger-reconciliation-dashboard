@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Card,
   Text,
@@ -105,16 +105,7 @@ export function ProcessingMetricsChart({ metrics, realTimeMode = false }: Proces
     }
   ]);
 
-  useEffect(() => {
-    if (autoRefresh) {
-      const interval = setInterval(() => {
-        updateMetrics();
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [autoRefresh]);
-
-  const updateMetrics = () => {
+  const updateMetrics = useCallback(() => {
     // Simulate real-time metric updates
     setSystemMetrics(prev => prev.map(metric => ({
       ...metric,
@@ -133,7 +124,16 @@ export function ProcessingMetricsChart({ metrics, realTimeMode = false }: Proces
     };
 
     setPerformanceHistory(prev => [...prev.slice(-9), newEntry]);
-  };
+  }, [systemMetrics]);
+
+  useEffect(() => {
+    if (autoRefresh) {
+      const interval = setInterval(() => {
+        updateMetrics();
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [autoRefresh, updateMetrics]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -179,7 +179,7 @@ export function ProcessingMetricsChart({ metrics, realTimeMode = false }: Proces
         <Group>
           <Select
             value={viewMode}
-            onChange={(value) => setViewMode(value as any)}
+            onChange={(value) => setViewMode(value as 'overview' | 'detailed' | 'system')}
             data={[
               { value: 'overview', label: 'Overview' },
               { value: 'detailed', label: 'Detailed' },
@@ -392,7 +392,7 @@ export function ProcessingMetricsChart({ metrics, realTimeMode = false }: Proces
           <Card padding="md" withBorder>
             <Text fw={600} mb="md">Currency Distribution</Text>
             <Grid>
-              {Object.entries(metrics.currencyDistribution).filter(([_, data]) => data.count > 0).map(([currency, data]) => (
+              {Object.entries(metrics.currencyDistribution).filter(([, data]) => data.count > 0).map(([currency, data]) => (
                 <Grid.Col key={currency} span={4}>
                   <Paper p="md" bg="gray.0" radius="sm">
                     <Text fw={600} mb="xs">{currency}</Text>
