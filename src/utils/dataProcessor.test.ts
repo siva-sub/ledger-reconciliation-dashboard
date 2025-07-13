@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { dataProcessor } from '@/services/dataProcessor';
+import type { CurrencyCode } from '@/types/financial';
 
 describe('DataProcessor', () => {
   it('should be defined', () => {
@@ -13,12 +14,12 @@ describe('DataProcessor', () => {
         entryRef: 'TEST-001',
         bookingDate: '2024-01-01',
         valueDate: '2024-01-01',
-        amount: { original: 1000, currency: 'USD' },
-        creditDebitIndicator: 'CRDT',
+        amount: { original: 1000, currency: 'USD' as CurrencyCode },
+        creditDebitIndicator: 'CRDT' as const,
         counterparty: { name: 'Test Corp', account: '123456' },
         description: 'Test transaction',
-        riskLevel: 'LOW',
-        reconciliationStatus: 'PENDING'
+        riskLevel: 'LOW' as const,
+        reconciliationStatus: 'PENDING' as const
       }
     ];
 

@@ -239,7 +239,7 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
       }
 
       case 3: { // Risk Assessment
-        const previousOutput = generateStepOutput(2);
+        const previousOutput = generateStepOutput(2) as Record<string, any>;
         const riskLevel = amount > 10000 ? 'HIGH' : amount > 5000 ? 'MEDIUM' : 'LOW';
         
         return {
@@ -445,35 +445,46 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
             </Grid>
 
             {/* Step-specific insights */}
-            {step.status === 'completed' && step.output && (
+            {step.status === 'completed' && step.output ? (
               <Alert icon={<IconInfoCircle size={16} />} mb="md">
-                {index === 0 && (
-                  <Text size="sm">
-                    Successfully parsed XML and extracted {step.output.entries?.length || 0} transaction entries.
-                    Validated against ISO 20022 schema.
-                  </Text>
-                )}
-                {index === 1 && (
-                  <Text size="sm">
-                    Structured transaction data with unique ID {step.output.id}. 
-                    Mapped counterparty information and transaction references.
-                  </Text>
-                )}
-                {index === 2 && step.output.fxConversion && (
-                  <Text size="sm">
-                    Applied FX rate of {step.output.fxConversion.rate} ({step.output.fxConversion.fromCurrency} to {step.output.fxConversion.toCurrency}).
-                    Converted amount: SGD {step.output.fxConversion.convertedAmount.toLocaleString()}
-                  </Text>
-                )}
-                {index === 3 && (
-                  <Text size="sm">
-                    Assigned risk level: {step.output.riskLevel}. 
-                    Quality score: {step.output.qualityScore}/100. 
-                    All validation checks passed.
-                  </Text>
-                )}
+                {(() => {
+                  if (index === 0) {
+                    return (
+                      <Text size="sm">
+                        Successfully parsed XML and extracted {(step.output as any)?.entries?.length || 0} transaction entries.
+                        Validated against ISO 20022 schema.
+                      </Text>
+                    );
+                  }
+                  if (index === 1) {
+                    return (
+                      <Text size="sm">
+                        Structured transaction data with unique ID {(step.output as any)?.id || 'N/A'}. 
+                        Mapped counterparty information and transaction references.
+                      </Text>
+                    );
+                  }
+                  if (index === 2 && (step.output as any)?.fxConversion) {
+                    return (
+                      <Text size="sm">
+                        Applied FX rate of {(step.output as any)?.fxConversion?.rate} ({(step.output as any)?.fxConversion?.fromCurrency} to {(step.output as any)?.fxConversion?.toCurrency}).
+                        Converted amount: SGD {(step.output as any)?.fxConversion?.convertedAmount?.toLocaleString()}
+                      </Text>
+                    );
+                  }
+                  if (index === 3) {
+                    return (
+                      <Text size="sm">
+                        Assigned risk level: {(step.output as any)?.riskLevel}. 
+                        Quality score: {(step.output as any)?.qualityScore}/100. 
+                        All validation checks passed.
+                      </Text>
+                    );
+                  }
+                  return null;
+                })()}
               </Alert>
-            )}
+            ) : null}
           </Timeline.Item>
         ))}
       </Timeline>
@@ -514,7 +525,7 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
               </Stack>
             </Grid.Col>
             <Grid.Col span={6}>
-              {transformationSteps[3]?.output && (
+              {transformationSteps[3]?.output ? (
                 <Paper p="md" bg="white" radius="sm">
                   <Text size="sm" fw={600} mb="xs">Final Transaction Summary</Text>
                   <Table>
@@ -525,27 +536,27 @@ export function DataTransformationViewer({ onTransformationComplete }: DataTrans
                       </Table.Tr>
                       <Table.Tr>
                         <Table.Td>SGD Equivalent</Table.Td>
-                        <Table.Td>SGD {transformationSteps[3].output.fxConversion?.convertedAmount.toLocaleString()}</Table.Td>
+                        <Table.Td>SGD {(transformationSteps[3].output as any).fxConversion?.convertedAmount.toLocaleString()}</Table.Td>
                       </Table.Tr>
                       <Table.Tr>
                         <Table.Td>Risk Level</Table.Td>
                         <Table.Td>
                           <Badge color={
-                            transformationSteps[3].output.riskLevel === 'HIGH' ? 'red' :
-                            transformationSteps[3].output.riskLevel === 'MEDIUM' ? 'orange' : 'green'
+                            (transformationSteps[3].output as any).riskLevel === 'HIGH' ? 'red' :
+                            (transformationSteps[3].output as any).riskLevel === 'MEDIUM' ? 'orange' : 'green'
                           }>
-                            {transformationSteps[3].output.riskLevel}
+                            {(transformationSteps[3].output as any).riskLevel}
                           </Badge>
                         </Table.Td>
                       </Table.Tr>
                       <Table.Tr>
                         <Table.Td>Quality Score</Table.Td>
-                        <Table.Td>{transformationSteps[3].output.qualityScore}/100</Table.Td>
+                        <Table.Td>{(transformationSteps[3].output as any).qualityScore}/100</Table.Td>
                       </Table.Tr>
                     </Table.Tbody>
                   </Table>
                 </Paper>
-              )}
+              ) : null}
             </Grid.Col>
           </Grid>
         </Card>

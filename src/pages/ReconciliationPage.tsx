@@ -61,6 +61,28 @@ export function ReconciliationPage() {
     return { total, matched, pending, exceptions, confidence };
   }, [transactions]);
 
+  // Helper function for type-safe sorting
+  const getSortValue = (transaction: FinancialTransaction, field: keyof FinancialTransaction): string | number => {
+    switch (field) {
+      case 'amount':
+        return transaction.amount.original;
+      case 'entryRef':
+      case 'bookingDate':
+      case 'valueDate':
+      case 'description':
+      case 'creditDebitIndicator':
+      case 'riskLevel':
+      case 'reconciliationStatus':
+        return transaction[field];
+      case 'counterparty':
+        return transaction.counterparty.name;
+      default:
+        // For any other field, safely convert to string
+        const value = transaction[field];
+        return typeof value === 'string' || typeof value === 'number' ? value : String(value);
+    }
+  };
+
   // Smart search functionality
   const filteredTransactions = useMemo(() => {
     const filtered = transactions.filter(transaction => {
@@ -76,26 +98,40 @@ export function ReconciliationPage() {
       return matchesSearch && matchesStatus && matchesRisk;
     });
 
-    // Sort transactions
+    // Sort transactions with type safety
     filtered.sort((a, b) => {
-      let aValue: unknown = a[sortField as keyof typeof a];
-      let bValue: unknown = b[sortField as keyof typeof b];
+      const aValue = getSortValue(a, sortField);
+      const bValue = getSortValue(b, sortField);
       
-      // Handle nested properties
-      if (sortField === 'amount') {
-        aValue = a.amount.original;
-        bValue = b.amount.original;
+      // Handle string comparison (case-insensitive)
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        const aLower = aValue.toLowerCase();
+        const bLower = bValue.toLowerCase();
+        
+        if (sortDirection === 'asc') {
+          return aLower > bLower ? 1 : aLower < bLower ? -1 : 0;
+        } else {
+          return aLower < bLower ? 1 : aLower > bLower ? -1 : 0;
+        }
       }
       
-      if (typeof aValue === 'string') {
-        aValue = aValue.toLowerCase();
-        bValue = bValue.toLowerCase();
+      // Handle number comparison
+      if (typeof aValue === 'number' && typeof bValue === 'number') {
+        if (sortDirection === 'asc') {
+          return aValue - bValue;
+        } else {
+          return bValue - aValue;
+        }
       }
+      
+      // Mixed types - convert to string and compare
+      const aStr = String(aValue).toLowerCase();
+      const bStr = String(bValue).toLowerCase();
       
       if (sortDirection === 'asc') {
-        return aValue > bValue ? 1 : -1;
+        return aStr > bStr ? 1 : aStr < bStr ? -1 : 0;
       } else {
-        return aValue < bValue ? 1 : -1;
+        return aStr < bStr ? 1 : aStr > bStr ? -1 : 0;
       }
     });
 

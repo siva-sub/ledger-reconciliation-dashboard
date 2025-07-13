@@ -155,7 +155,7 @@ export function ValidationExamples() {
     
     switch (rule.id) {
       case 'required-fields': {
-        const hasRequired = input.amount && input.currency && input.date;
+        const hasRequired = Boolean(input.amount && input.currency && input.date);
         return {
           ruleId: rule.id,
           passed: hasRequired,
@@ -358,8 +358,8 @@ export function ValidationExamples() {
                           <Group justify="space-between">
                             <div>
                               <Text size="sm" fw={600}>{rule?.name}</Text>
-                              <Text size="xs">{result.message}</Text>
-                              {result.value && (
+                              <Text size="xs">{String(result.message)}</Text>
+                              {result.value !== undefined && (
                                 <Text size="xs" c="dimmed">Value: {JSON.stringify(result.value)}</Text>
                               )}
                             </div>

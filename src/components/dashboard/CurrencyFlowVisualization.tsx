@@ -142,7 +142,7 @@ export function CurrencyFlowVisualization({ metrics, isLoading }: CurrencyFlowVi
       const date = new Date();
       date.setDate(date.getDate() - (days - i - 1));
       
-      const data: Record<string, number | string> = {
+      const data: Record<string, number | string> & { totalVolume: number } = {
         date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
         fullDate: date.toISOString(),
         totalVolume: 0,
@@ -150,8 +150,9 @@ export function CurrencyFlowVisualization({ metrics, isLoading }: CurrencyFlowVi
 
       currencyFlowData.forEach((currency) => {
         const dailyVolume = currency.sgdEquivalent / days + (Math.random() - 0.5) * (currency.sgdEquivalent / days * 0.3);
-        data[currency.currency] = Math.max(0, dailyVolume);
-        data.totalVolume += data[currency.currency];
+        const volume = Math.max(0, dailyVolume);
+        data[currency.currency] = volume;
+        data.totalVolume += volume;
       });
 
       return data;

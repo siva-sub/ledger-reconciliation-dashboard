@@ -75,12 +75,6 @@ export function InteractiveETLFlow({ pipeline, onStepClick, autoPlay = false }: 
 
   const [expandedSteps, setExpandedSteps] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
-    if (autoPlay) {
-      startSimulation();
-    }
-  }, [autoPlay, startSimulation]);
-
   const startSimulation = useCallback(() => {
     setSimulation(prev => ({ ...prev, isRunning: true, currentStep: 0, stepProgress: 0, totalProgress: 0 }));
     
@@ -124,6 +118,12 @@ export function InteractiveETLFlow({ pipeline, onStepClick, autoPlay = false }: 
 
     runStep();
   }, [pipeline.steps]);
+
+  useEffect(() => {
+    if (autoPlay) {
+      startSimulation();
+    }
+  }, [autoPlay, startSimulation]);
 
   const pauseSimulation = () => {
     setSimulation(prev => ({ ...prev, isRunning: false }));
