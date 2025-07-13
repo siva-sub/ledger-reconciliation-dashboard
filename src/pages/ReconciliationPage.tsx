@@ -483,6 +483,22 @@ export function ReconciliationPage() {
         )}
       </Card>
 
+      {/* Debug info */}
+      {modalOpened && (
+        <div style={{ 
+          position: 'fixed', 
+          top: 10, 
+          right: 10, 
+          backgroundColor: 'red', 
+          color: 'white', 
+          padding: '10px',
+          zIndex: 11000,
+          borderRadius: '5px'
+        }}>
+          Modal should be open! Transaction: {selectedTransaction?.entryRef || 'No transaction'}
+        </div>
+      )}
+      
       {/* Transaction Details Modal */}
       <TransactionDetailsModal
         transaction={selectedTransaction}
