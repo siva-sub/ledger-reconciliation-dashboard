@@ -1,0 +1,118 @@
+[
+  {
+    "id": "pipeline-1",
+    "name": "CAMT.053 Processing Pipeline",
+    "status": "COMPLETED",
+    "startTime": "2025-01-13T16:52:22.958Z",
+    "endTime": "2025-01-13T16:53:08.958Z",
+    "duration": 415,
+    "steps": [
+      {
+        "id": "step-1",
+        "name": "XML Parsing",
+        "type": "EXTRACT",
+        "status": "COMPLETED",
+        "inputCount": 1,
+        "outputCount": 3,
+        "errorCount": 0,
+        "duration": 125,
+        "details": {
+          "description": "Parse CAMT.053 XML file and extract transaction data",
+          "inputFormat": "XML",
+          "outputFormat": "JSON",
+          "transformationRules": ["Extract transaction details", "Parse counterparty information"],
+          "validationRules": ["Validate XML schema", "Check required fields"],
+          "errorMessages": []
+        }
+      },
+      {
+        "id": "step-2",
+        "name": "FX Transformation",
+        "type": "TRANSFORM",
+        "status": "COMPLETED",
+        "inputCount": 3,
+        "outputCount": 3,
+        "errorCount": 0,
+        "duration": 89,
+        "details": {
+          "description": "Apply FX conversions and calculate base currency amounts",
+          "inputFormat": "JSON",
+          "outputFormat": "JSON",
+          "transformationRules": ["Apply FX rates", "Calculate converted amounts"],
+          "validationRules": ["Validate conversion rates", "Check currency codes"],
+          "errorMessages": []
+        }
+      },
+      {
+        "id": "step-3",
+        "name": "Data Validation",
+        "type": "VALIDATE",
+        "status": "COMPLETED",
+        "inputCount": 3,
+        "outputCount": 3,
+        "errorCount": 0,
+        "duration": 45,
+        "details": {
+          "description": "Validate transaction data and assign risk levels",
+          "inputFormat": "JSON",
+          "outputFormat": "JSON",
+          "transformationRules": ["Assign risk levels", "Categorize transactions"],
+          "validationRules": ["Business rule validation", "Data quality checks"],
+          "errorMessages": []
+        }
+      },
+      {
+        "id": "step-4",
+        "name": "Database Loading",
+        "type": "LOAD",
+        "status": "COMPLETED",
+        "inputCount": 3,
+        "outputCount": 3,
+        "errorCount": 0,
+        "duration": 156,
+        "details": {
+          "description": "Load validated transactions into database",
+          "inputFormat": "JSON",
+          "outputFormat": "Database",
+          "transformationRules": ["Map to database schema", "Generate audit trail"],
+          "validationRules": ["Unique constraint checks", "Foreign key validation"],
+          "errorMessages": []
+        }
+      }
+    ],
+    "metrics": {
+      "totalTransactions": 3,
+      "successfulTransactions": 3,
+      "failedTransactions": 0,
+      "foreignCurrencyCount": 2,
+      "successfulConversions": 2,
+      "failedConversions": 0,
+      "riskDistribution": {
+        "HIGH": 0,
+        "MEDIUM": 2,
+        "LOW": 1,
+        "NONE": 0
+      },
+      "categoryDistribution": {
+        "REVENUE": 3,
+        "EXPENSE": 0,
+        "TRANSFER": 0,
+        "OTHER": 0
+      },
+      "currencyDistribution": {
+        "USD": { "count": 1, "totalAmount": "15000.00", "averageAmount": 15000 },
+        "EUR": { "count": 1, "totalAmount": "8500.00", "averageAmount": 8500 },
+        "SGD": { "count": 1, "totalAmount": "2850.75", "averageAmount": 2850.75 }
+      },
+      "processingTime": {
+        "parsing": 125,
+        "transformation": 89,
+        "validation": 45,
+        "loading": 156,
+        "total": 415
+      },
+      "qualityScore": 95.5,
+      "dataCompleteness": 98.2
+    }
+  }
+]

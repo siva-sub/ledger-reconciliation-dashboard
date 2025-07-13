@@ -1,0 +1,2257 @@
+[
+  {
+    "id": "TXN-2024-001",
+    "entryRef": "ENT-240101-001",
+    "bookingDate": "2024-01-15",
+    "valueDate": "2024-01-15",
+    "amount": {
+      "original": 125000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "DEUTSCHE BUNDESBANK",
+      "account": "DE89370400440532013000",
+      "bic": "DEUTDEFF"
+    },
+    "description": "SEPA CREDIT TRANSFER - Government Grant for Digital Infrastructure Project - REF: 2024-DIG-001",
+    "bankTransactionCode": "PMNT-ICDT-ESCT",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "SEPA_COMPLIANCE",
+        "status": "PASS",
+        "message": "Transaction complies with SEPA requirements",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-15T14:30:00Z",
+      "dataSource": "CAMT053_XML",
+      "validationScore": 95,
+      "flags": ["GOVERNMENT_PAYMENT", "HIGH_VALUE"]
+    }
+  },
+  {
+    "id": "TXN-2024-002",
+    "entryRef": "ENT-240102-001",
+    "bookingDate": "2024-01-16",
+    "valueDate": "2024-01-16",
+    "amount": {
+      "original": 45000.00,
+      "currency": "USD"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "SILICON VALLEY TECH CORP",
+      "account": "US64SVBKUS6S1234567890",
+      "bic": "SVBKUS6S"
+    },
+    "description": "International Wire Transfer - Software Licensing Q1 2024 - INV: SV-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-ESCT",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "USD",
+      "toCurrency": "EUR",
+      "rate": 0.9234,
+      "rateDate": "2024-01-16",
+      "convertedAmount": 41553.00,
+      "provider": "API",
+      "confidence": 98
+    },
+    "validationResults": [
+      {
+        "rule": "SANCTIONS_CHECK",
+        "status": "PASS",
+        "message": "No sanctions matches found",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "PEP_CHECK",
+        "status": "WARNING",
+        "message": "Counterparty requires enhanced due diligence",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-16T09:15:00Z",
+      "dataSource": "SWIFT_MT103",
+      "validationScore": 78,
+      "flags": ["CROSS_BORDER", "USD_PAYMENT", "SOFTWARE_LICENSE"]
+    }
+  },
+  {
+    "id": "TXN-2024-003",
+    "entryRef": "ENT-240103-001",
+    "bookingDate": "2024-01-17",
+    "valueDate": "2024-01-17",
+    "amount": {
+      "original": 2500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "EMPLOYEE SARAH MUELLER",
+      "account": "DE89370400440532013099",
+      "bic": "DEUTDEFF"
+    },
+    "description": "Salary Payment January 2024 - Employee ID: EMP001 - Net Salary",
+    "bankTransactionCode": "PMNT-ICDT-SALA",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PAYROLL_COMPLIANCE",
+        "status": "PASS",
+        "message": "Payroll payment properly documented",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-17T06:00:00Z",
+      "dataSource": "PAYROLL_SYSTEM",
+      "validationScore": 100,
+      "flags": ["PAYROLL", "RECURRING_PAYMENT"]
+    }
+  },
+  {
+    "id": "TXN-2024-004",
+    "entryRef": "ENT-240104-001",
+    "bookingDate": "2024-01-18",
+    "valueDate": "2024-01-20",
+    "amount": {
+      "original": 15750.00,
+      "currency": "GBP"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "LONDON FINANCIAL SERVICES LTD",
+      "account": "GB29NWBK60161331926819",
+      "bic": "NWBKGB2L"
+    },
+    "description": "Investment Returns Q4 2023 - Portfolio Reference: PF-UK-2023-004",
+    "bankTransactionCode": "PMNT-IRCT-TRAD",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": {
+      "fromCurrency": "GBP",
+      "toCurrency": "EUR",
+      "rate": 1.1678,
+      "rateDate": "2024-01-18",
+      "convertedAmount": 18390.15,
+      "provider": "CSV",
+      "confidence": 85
+    },
+    "validationResults": [
+      {
+        "rule": "INVESTMENT_CLASSIFICATION",
+        "status": "WARNING",
+        "message": "Investment return classification needs review",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-18T16:45:00Z",
+      "dataSource": "INVESTMENT_PLATFORM",
+      "validationScore": 72,
+      "flags": ["INVESTMENT_RETURN", "GBP_PAYMENT", "NEEDS_REVIEW"]
+    }
+  },
+  {
+    "id": "TXN-2024-005",
+    "entryRef": "ENT-240105-001",
+    "bookingDate": "2024-01-19",
+    "valueDate": "2024-01-19",
+    "amount": {
+      "original": 500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "CENTRAL EUROPEAN BANK",
+      "account": "AT611904300234573201",
+      "bic": "BKAUATWW"
+    },
+    "description": "Monthly Account Maintenance Fee - Premium Business Account",
+    "bankTransactionCode": "PMNT-MCOP-CHRG",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "FEE_VALIDATION",
+        "status": "PASS",
+        "message": "Bank fee within expected range",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-19T02:00:00Z",
+      "dataSource": "BANK_SYSTEM",
+      "validationScore": 100,
+      "flags": ["BANK_FEE", "RECURRING_CHARGE"]
+    }
+  },
+  {
+    "id": "TXN-2024-006",
+    "entryRef": "ENT-240106-001",
+    "bookingDate": "2024-01-20",
+    "valueDate": "2024-01-22",
+    "amount": {
+      "original": 85000.00,
+      "currency": "CHF"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "SWISS PHARMACEUTICAL AG",
+      "account": "CH9300762011623852957",
+      "bic": "UBSWCHZH80A"
+    },
+    "description": "Invoice Payment - Medical Equipment Q1 2024 - Purchase Order: PO-MED-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-SUPP",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "CHF",
+      "toCurrency": "EUR",
+      "rate": 0.9876,
+      "rateDate": "2024-01-20",
+      "convertedAmount": 83946.00,
+      "provider": "API",
+      "confidence": 92
+    },
+    "validationResults": [
+      {
+        "rule": "HIGH_VALUE_CHECK",
+        "status": "WARNING",
+        "message": "Transaction exceeds daily limit threshold",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "VENDOR_VERIFICATION",
+        "status": "PASS",
+        "message": "Vendor verified in approved supplier list",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-20T11:30:00Z",
+      "dataSource": "PROCUREMENT_SYSTEM",
+      "validationScore": 65,
+      "flags": ["HIGH_VALUE", "CHF_PAYMENT", "MEDICAL_EQUIPMENT"]
+    }
+  },
+  {
+    "id": "TXN-2024-007",
+    "entryRef": "ENT-240107-001",
+    "bookingDate": "2024-01-21",
+    "valueDate": "2024-01-21",
+    "amount": {
+      "original": 12000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "FRANKFURT OFFICE LEASING GMBH",
+      "account": "DE44500105175407324931",
+      "bic": "DUSSDEDDXXX"
+    },
+    "description": "Office Rent February 2024 - Frankfurt Main Office - Contract: FL-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-RLTI",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "LEASE_PAYMENT_VALIDATION",
+        "status": "PASS",
+        "message": "Lease payment matches contract terms",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-21T08:00:00Z",
+      "dataSource": "REAL_ESTATE_SYSTEM",
+      "validationScore": 98,
+      "flags": ["RENT_PAYMENT", "RECURRING_PAYMENT", "REAL_ESTATE"]
+    }
+  },
+  {
+    "id": "TXN-2024-008",
+    "entryRef": "ENT-240108-001",
+    "bookingDate": "2024-01-22",
+    "valueDate": "2024-01-22",
+    "amount": {
+      "original": 5500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "NORDIC CONSULTING AB",
+      "account": "SE4550000000058398257466",
+      "bic": "ESSESESS"
+    },
+    "description": "Consulting Services Invoice - Digital Transformation Project - INV: NC-2024-008",
+    "bankTransactionCode": "PMNT-ICDT-CNSM",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "CONSULTING_FEE_CHECK",
+        "status": "WARNING",
+        "message": "Consulting fee requires department approval",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-22T13:15:00Z",
+      "dataSource": "CONSULTING_PORTAL",
+      "validationScore": 82,
+      "flags": ["CONSULTING_FEE", "APPROVAL_REQUIRED"]
+    }
+  },
+  {
+    "id": "TXN-2024-009",
+    "entryRef": "ENT-240109-001",
+    "bookingDate": "2024-01-23",
+    "valueDate": "2024-01-25",
+    "amount": {
+      "original": 230000.00,
+      "currency": "JPY"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "TOKYO TECH SOLUTIONS KK",
+      "account": "JP1234567890123456789012",
+      "bic": "BOTKJPJT"
+    },
+    "description": "Hardware Purchase - Server Infrastructure Q1 2024 - Contract: TTS-INFRA-2024",
+    "bankTransactionCode": "PMNT-IRCT-SUPP",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": {
+      "fromCurrency": "JPY",
+      "toCurrency": "EUR",
+      "rate": 0.0067,
+      "rateDate": "2024-01-23",
+      "convertedAmount": 1541.00,
+      "provider": "MANUAL",
+      "confidence": 70
+    },
+    "validationResults": [
+      {
+        "rule": "CURRENCY_VOLATILITY",
+        "status": "FAIL",
+        "message": "JPY exchange rate shows high volatility",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "CROSS_BORDER_COMPLIANCE",
+        "status": "WARNING",
+        "message": "Japan payment requires additional documentation",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-23T17:45:00Z",
+      "dataSource": "IT_PROCUREMENT",
+      "validationScore": 45,
+      "flags": ["JPY_PAYMENT", "HIGH_VOLATILITY", "DOCUMENTATION_REQUIRED"]
+    }
+  },
+  {
+    "id": "TXN-2024-010",
+    "entryRef": "ENT-240110-001",
+    "bookingDate": "2024-01-24",
+    "valueDate": "2024-01-24",
+    "amount": {
+      "original": 18500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "EUROPEAN CENTRAL BANK",
+      "account": "DE89500100600320009999",
+      "bic": "MARKDEFF"
+    },
+    "description": "Interest Payment - Term Deposit Maturity - Account: TD-EUR-2023-045",
+    "bankTransactionCode": "PMNT-MCOP-INTE",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "INTEREST_CALCULATION",
+        "status": "PASS",
+        "message": "Interest calculation verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-24T14:00:00Z",
+      "dataSource": "TREASURY_SYSTEM",
+      "validationScore": 100,
+      "flags": ["INTEREST_INCOME", "TERM_DEPOSIT"]
+    }
+  },
+  {
+    "id": "TXN-2024-011",
+    "entryRef": "ENT-240111-001",
+    "bookingDate": "2024-01-25",
+    "valueDate": "2024-01-25",
+    "amount": {
+      "original": 75000.00,
+      "currency": "USD"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "CANADIAN MAPLE INVESTMENTS",
+      "account": "CA1234567890123456789",
+      "bic": "TDOMCATTTOR"
+    },
+    "description": "Bond Redemption - Canadian Government Bond Series 2019 - CUSIP: 135087K60",
+    "bankTransactionCode": "PMNT-IRCT-TRAD",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "USD",
+      "toCurrency": "EUR",
+      "rate": 0.9156,
+      "rateDate": "2024-01-25",
+      "convertedAmount": 68670.00,
+      "provider": "API",
+      "confidence": 91
+    },
+    "validationResults": [
+      {
+        "rule": "BOND_MATURITY_CHECK",
+        "status": "PASS",
+        "message": "Bond maturity date verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-25T10:30:00Z",
+      "dataSource": "BOND_SYSTEM",
+      "validationScore": 88,
+      "flags": ["BOND_REDEMPTION", "USD_PAYMENT", "GOVERNMENT_BOND"]
+    }
+  },
+  {
+    "id": "TXN-2024-012",
+    "entryRef": "ENT-240112-001",
+    "bookingDate": "2024-01-26",
+    "valueDate": "2024-01-26",
+    "amount": {
+      "original": 3200.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "GERMAN TAX AUTHORITY",
+      "account": "DE12345678901234567890",
+      "bic": "MARKDEFF"
+    },
+    "description": "VAT Payment Q4 2023 - Tax Reference: VAT-DE-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-TAXS",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "TAX_COMPLIANCE",
+        "status": "PASS",
+        "message": "VAT payment properly documented",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-26T11:00:00Z",
+      "dataSource": "TAX_SYSTEM",
+      "validationScore": 100,
+      "flags": ["VAT_PAYMENT", "TAX_AUTHORITY", "COMPLIANCE"]
+    }
+  },
+  {
+    "id": "TXN-2024-013",
+    "entryRef": "ENT-240113-001",
+    "bookingDate": "2024-01-27",
+    "valueDate": "2024-01-29",
+    "amount": {
+      "original": 45000.00,
+      "currency": "AUD"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "SYDNEY MINING CONSORTIUM",
+      "account": "AU1234567890123456789012",
+      "bic": "ANZBAU3M"
+    },
+    "description": "Dividend Payment - Mining Operations Q4 2023 - Reference: SMC-DIV-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-DIVD",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "AUD",
+      "toCurrency": "EUR",
+      "rate": 0.6123,
+      "rateDate": "2024-01-27",
+      "convertedAmount": 27553.50,
+      "provider": "API",
+      "confidence": 89
+    },
+    "validationResults": [
+      {
+        "rule": "DIVIDEND_CLASSIFICATION",
+        "status": "WARNING",
+        "message": "Dividend source requires verification",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-27T15:20:00Z",
+      "dataSource": "INVESTMENT_PLATFORM",
+      "validationScore": 76,
+      "flags": ["DIVIDEND_INCOME", "AUD_PAYMENT", "MINING_SECTOR"]
+    }
+  },
+  {
+    "id": "TXN-2024-014",
+    "entryRef": "ENT-240114-001",
+    "bookingDate": "2024-01-28",
+    "valueDate": "2024-01-28",
+    "amount": {
+      "original": 8900.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "MUNICH LEGAL SERVICES",
+      "account": "DE89370400440532013088",
+      "bic": "COBADEFFXXX"
+    },
+    "description": "Legal Services - Corporate Compliance Review Q1 2024 - Case: MLS-COMP-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-PRFS",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PROFESSIONAL_SERVICES",
+        "status": "WARNING",
+        "message": "Legal fee requires executive approval",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-28T12:45:00Z",
+      "dataSource": "LEGAL_SYSTEM",
+      "validationScore": 68,
+      "flags": ["LEGAL_SERVICES", "APPROVAL_REQUIRED", "COMPLIANCE"]
+    }
+  },
+  {
+    "id": "TXN-2024-015",
+    "entryRef": "ENT-240115-001",
+    "bookingDate": "2024-01-29",
+    "valueDate": "2024-01-30",
+    "amount": {
+      "original": 155000.00,
+      "currency": "CNY"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "SHANGHAI MANUFACTURING LTD",
+      "account": "CN1234567890123456789012",
+      "bic": "ICBKCNBJ"
+    },
+    "description": "Equipment Purchase - Manufacturing Line Upgrade - Contract: SML-EQUIP-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-SUPP",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": {
+      "fromCurrency": "CNY",
+      "toCurrency": "EUR",
+      "rate": 0.1289,
+      "rateDate": "2024-01-29",
+      "convertedAmount": 19979.50,
+      "provider": "MANUAL",
+      "confidence": 65
+    },
+    "validationResults": [
+      {
+        "rule": "CHINA_COMPLIANCE",
+        "status": "FAIL",
+        "message": "China payment requires SAFE approval",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "ANTI_MONEY_LAUNDERING",
+        "status": "WARNING",
+        "message": "Enhanced due diligence required",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-29T16:30:00Z",
+      "dataSource": "MANUFACTURING_SYSTEM",
+      "validationScore": 35,
+      "flags": ["CNY_PAYMENT", "REGULATORY_APPROVAL", "HIGH_RISK"]
+    }
+  },
+  {
+    "id": "TXN-2024-016",
+    "entryRef": "ENT-240116-001",
+    "bookingDate": "2024-01-30",
+    "valueDate": "2024-01-30",
+    "amount": {
+      "original": 25000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "EUROPEAN INSURANCE GROUP",
+      "account": "FR1420041010050500013M02606",
+      "bic": "BNPAFRPP"
+    },
+    "description": "Insurance Claim Settlement - Business Interruption Q4 2023 - Claim: EIG-BI-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-INST",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "INSURANCE_VALIDATION",
+        "status": "PASS",
+        "message": "Insurance claim properly documented",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-30T09:00:00Z",
+      "dataSource": "INSURANCE_SYSTEM",
+      "validationScore": 95,
+      "flags": ["INSURANCE_CLAIM", "BUSINESS_INTERRUPTION"]
+    }
+  },
+  {
+    "id": "TXN-2024-017",
+    "entryRef": "ENT-240117-001",
+    "bookingDate": "2024-01-31",
+    "valueDate": "2024-02-01",
+    "amount": {
+      "original": 67500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "NORWEGIAN ENERGY SOLUTIONS",
+      "account": "NO9386011117947",
+      "bic": "DNBANOKK"
+    },
+    "description": "Energy Contract Settlement - Renewable Energy Q1 2024 - Contract: NES-REN-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-SUPP",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "ENERGY_CONTRACT_CHECK",
+        "status": "PASS",
+        "message": "Energy contract terms verified",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-01-31T14:15:00Z",
+      "dataSource": "ENERGY_SYSTEM",
+      "validationScore": 87,
+      "flags": ["ENERGY_PAYMENT", "RENEWABLE_ENERGY"]
+    }
+  },
+  {
+    "id": "TXN-2024-018",
+    "entryRef": "ENT-240118-001",
+    "bookingDate": "2024-02-01",
+    "valueDate": "2024-02-01",
+    "amount": {
+      "original": 1250.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "CENTRAL BANK OPERATIONS",
+      "account": "DE89500100600320001111",
+      "bic": "MARKDEFF"
+    },
+    "description": "Regulatory Reporting Fee - EMIR Trade Repository Q4 2023",
+    "bankTransactionCode": "PMNT-MCOP-CHRG",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "REGULATORY_FEE_CHECK",
+        "status": "PASS",
+        "message": "Regulatory fee within expected range",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-01T08:30:00Z",
+      "dataSource": "REGULATORY_SYSTEM",
+      "validationScore": 100,
+      "flags": ["REGULATORY_FEE", "EMIR_REPORTING"]
+    }
+  },
+  {
+    "id": "TXN-2024-019",
+    "entryRef": "ENT-240119-001",
+    "bookingDate": "2024-02-02",
+    "valueDate": "2024-02-02",
+    "amount": {
+      "original": 95000.00,
+      "currency": "SGD"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "SINGAPORE TRADE FINANCE",
+      "account": "SG1234567890123456789012",
+      "bic": "DBSSSGSG"
+    },
+    "description": "Trade Finance Settlement - Letter of Credit LC-2024-001 - Commodity Trading",
+    "bankTransactionCode": "PMNT-IRCT-TRAD",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": {
+      "fromCurrency": "SGD",
+      "toCurrency": "EUR",
+      "rate": 0.6834,
+      "rateDate": "2024-02-02",
+      "convertedAmount": 64923.00,
+      "provider": "API",
+      "confidence": 86
+    },
+    "validationResults": [
+      {
+        "rule": "TRADE_FINANCE_CHECK",
+        "status": "WARNING",
+        "message": "Letter of Credit requires document verification",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "COMMODITY_TRADING",
+        "status": "WARNING",
+        "message": "Commodity trading requires additional oversight",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-02T11:45:00Z",
+      "dataSource": "TRADE_FINANCE_SYSTEM",
+      "validationScore": 58,
+      "flags": ["TRADE_FINANCE", "SGD_PAYMENT", "LETTER_OF_CREDIT"]
+    }
+  },
+  {
+    "id": "TXN-2024-020",
+    "entryRef": "ENT-240120-001",
+    "bookingDate": "2024-02-03",
+    "valueDate": "2024-02-05",
+    "amount": {
+      "original": 42000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "PARIS TECHNOLOGY VENTURES",
+      "account": "FR1420041010050500013M02999",
+      "bic": "BNPAFRPP"
+    },
+    "description": "Investment in Startup - Series A Funding Round - Investment Agreement: PTV-SA-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-INVS",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "INVESTMENT_APPROVAL",
+        "status": "WARNING",
+        "message": "Startup investment requires board approval",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "DUE_DILIGENCE_CHECK",
+        "status": "PASS",
+        "message": "Due diligence documentation complete",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-03T13:20:00Z",
+      "dataSource": "INVESTMENT_SYSTEM",
+      "validationScore": 72,
+      "flags": ["STARTUP_INVESTMENT", "BOARD_APPROVAL", "VENTURE_CAPITAL"]
+    }
+  },
+  {
+    "id": "TXN-2024-021",
+    "entryRef": "ENT-240121-001",
+    "bookingDate": "2024-02-04",
+    "valueDate": "2024-02-04",
+    "amount": {
+      "original": 15800.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "AMSTERDAM DATA CENTER BV",
+      "account": "NL91ABNA0417164300",
+      "bic": "ABNANL2A"
+    },
+    "description": "Cloud Infrastructure Services - Q1 2024 Hosting - Contract: ADC-CLOUD-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-SUPP",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "CLOUD_SERVICE_VALIDATION",
+        "status": "PASS",
+        "message": "Cloud service contract verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "DATA_PROTECTION_CHECK",
+        "status": "PASS",
+        "message": "GDPR compliance verified",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-04T10:15:00Z",
+      "dataSource": "IT_INFRASTRUCTURE",
+      "validationScore": 92,
+      "flags": ["CLOUD_SERVICES", "DATA_CENTER", "GDPR_COMPLIANT"]
+    }
+  },
+  {
+    "id": "TXN-2024-022",
+    "entryRef": "ENT-240122-001",
+    "bookingDate": "2024-02-05",
+    "valueDate": "2024-02-05",
+    "amount": {
+      "original": 7200.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "MILAN FASHION EXPORTS SRL",
+      "account": "IT60X0542811101000000123456",
+      "bic": "BPMIITM1"
+    },
+    "description": "Product Sales - Premium Fashion Line Q4 2023 - Invoice: MFE-PREM-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-CMDT",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "SALES_REVENUE_CHECK",
+        "status": "PASS",
+        "message": "Sales revenue properly documented",
+        "severity": "LOW"
+      },
+      {
+        "rule": "VAT_VALIDATION",
+        "status": "PASS",
+        "message": "VAT calculation correct",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-05T14:30:00Z",
+      "dataSource": "SALES_SYSTEM",
+      "validationScore": 95,
+      "flags": ["SALES_REVENUE", "FASHION_INDUSTRY", "VAT_INCLUDED"]
+    }
+  },
+  {
+    "id": "TXN-2024-023",
+    "entryRef": "ENT-240123-001",
+    "bookingDate": "2024-02-06",
+    "valueDate": "2024-02-06",
+    "amount": {
+      "original": 125000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "BARCELONA REAL ESTATE FUND",
+      "account": "ES9121000418450200051332",
+      "bic": "CAIXESBB"
+    },
+    "description": "Real Estate Investment - Commercial Property Barcelona - Contract: BREF-COMM-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-RLTI",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "REAL_ESTATE_COMPLIANCE",
+        "status": "WARNING",
+        "message": "Real estate investment requires legal review",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "INVESTMENT_LIMIT_CHECK",
+        "status": "PASS",
+        "message": "Investment within portfolio limits",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-06T16:20:00Z",
+      "dataSource": "REAL_ESTATE_SYSTEM",
+      "validationScore": 78,
+      "flags": ["REAL_ESTATE_INVESTMENT", "COMMERCIAL_PROPERTY", "SPAIN"]
+    }
+  },
+  {
+    "id": "TXN-2024-024",
+    "entryRef": "ENT-240124-001",
+    "bookingDate": "2024-02-07",
+    "valueDate": "2024-02-07",
+    "amount": {
+      "original": 3500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "EMPLOYEE MARCO ROSSI",
+      "account": "IT15J0306912345000001234567",
+      "bic": "BCITITMM"
+    },
+    "description": "Salary Payment February 2024 - Employee ID: EMP002 - Senior Developer",
+    "bankTransactionCode": "PMNT-ICDT-SALA",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PAYROLL_COMPLIANCE",
+        "status": "PASS",
+        "message": "Payroll payment properly documented",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-07T06:00:00Z",
+      "dataSource": "PAYROLL_SYSTEM",
+      "validationScore": 100,
+      "flags": ["PAYROLL", "RECURRING_PAYMENT", "SENIOR_STAFF"]
+    }
+  },
+  {
+    "id": "TXN-2024-025",
+    "entryRef": "ENT-240125-001",
+    "bookingDate": "2024-02-08",
+    "valueDate": "2024-02-10",
+    "amount": {
+      "original": 89000.00,
+      "currency": "USD"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "NEW YORK INVESTMENT BANKING",
+      "account": "US1234567890123456789012",
+      "bic": "CHASUS33"
+    },
+    "description": "Corporate Bond Sale - US Treasury 10Y - Transaction: NYIB-BOND-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-TRAD",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "USD",
+      "toCurrency": "EUR",
+      "rate": 0.9178,
+      "rateDate": "2024-02-08",
+      "convertedAmount": 81684.20,
+      "provider": "API",
+      "confidence": 96
+    },
+    "validationResults": [
+      {
+        "rule": "BOND_TRADING_CHECK",
+        "status": "PASS",
+        "message": "Bond trading documentation complete",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "US_COMPLIANCE",
+        "status": "WARNING",
+        "message": "US securities transaction requires additional reporting",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-08T11:45:00Z",
+      "dataSource": "BOND_TRADING_SYSTEM",
+      "validationScore": 84,
+      "flags": ["BOND_SALE", "USD_PAYMENT", "US_SECURITIES"]
+    }
+  },
+  {
+    "id": "TXN-2024-026",
+    "entryRef": "ENT-240126-001",
+    "bookingDate": "2024-02-09",
+    "valueDate": "2024-02-09",
+    "amount": {
+      "original": 12500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "DUBLIN LEGAL PARTNERS LTD",
+      "account": "IE29AIBK93115212345678",
+      "bic": "AIBKIE2D"
+    },
+    "description": "Legal Advisory Services - M&A Due Diligence Q1 2024 - Case: DLP-DD-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-PRFS",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PROFESSIONAL_SERVICES",
+        "status": "WARNING",
+        "message": "Legal fee requires CFO approval",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "MA_CONFIDENTIALITY",
+        "status": "PASS",
+        "message": "Confidentiality agreement verified",
+        "severity": "CRITICAL"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-09T15:30:00Z",
+      "dataSource": "LEGAL_SYSTEM",
+      "validationScore": 75,
+      "flags": ["LEGAL_SERVICES", "MA_DUE_DILIGENCE", "CFO_APPROVAL"]
+    }
+  },
+  {
+    "id": "TXN-2024-027",
+    "entryRef": "ENT-240127-001",
+    "bookingDate": "2024-02-10",
+    "valueDate": "2024-02-10",
+    "amount": {
+      "original": 180000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "VIENNA PHARMACEUTICAL GROUP",
+      "account": "AT611904300234573890",
+      "bic": "BKAUATWW"
+    },
+    "description": "Pharmaceutical Patent Licensing - Oncology Research - License: VPG-ONCO-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-ROYP",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PATENT_LICENSE_CHECK",
+        "status": "PASS",
+        "message": "Patent licensing agreement verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "PHARMACEUTICAL_COMPLIANCE",
+        "status": "PASS",
+        "message": "Pharmaceutical regulations compliance verified",
+        "severity": "CRITICAL"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-10T12:15:00Z",
+      "dataSource": "IP_LICENSING_SYSTEM",
+      "validationScore": 94,
+      "flags": ["PATENT_LICENSING", "PHARMACEUTICAL", "ONCOLOGY"]
+    }
+  },
+  {
+    "id": "TXN-2024-028",
+    "entryRef": "ENT-240128-001",
+    "bookingDate": "2024-02-11",
+    "valueDate": "2024-02-11",
+    "amount": {
+      "original": 5600.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "HELSINKI MARKETING AGENCY OY",
+      "account": "FI2112345600000785",
+      "bic": "NDEAFIHH"
+    },
+    "description": "Marketing Campaign Q1 2024 - Digital Advertising - Campaign: HMA-DIG-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-ADTX",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "MARKETING_BUDGET_CHECK",
+        "status": "PASS",
+        "message": "Marketing expense within budget limits",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "ADVERTISING_COMPLIANCE",
+        "status": "PASS",
+        "message": "Advertising regulations compliance verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-11T09:30:00Z",
+      "dataSource": "MARKETING_SYSTEM",
+      "validationScore": 88,
+      "flags": ["MARKETING_EXPENSE", "DIGITAL_ADVERTISING", "FINLAND"]
+    }
+  },
+  {
+    "id": "TXN-2024-029",
+    "entryRef": "ENT-240129-001",
+    "bookingDate": "2024-02-12",
+    "valueDate": "2024-02-14",
+    "amount": {
+      "original": 320000.00,
+      "currency": "JPY"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "OSAKA ELECTRONICS CORP",
+      "account": "JP1234567890123456789013",
+      "bic": "SMTCJPJT"
+    },
+    "description": "Electronics Component Sales - Manufacturing Q1 2024 - Order: OEC-COMP-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-CMDT",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "JPY",
+      "toCurrency": "EUR",
+      "rate": 0.0065,
+      "rateDate": "2024-02-12",
+      "convertedAmount": 2080.00,
+      "provider": "API",
+      "confidence": 89
+    },
+    "validationResults": [
+      {
+        "rule": "ELECTRONICS_EXPORT_CHECK",
+        "status": "PASS",
+        "message": "Electronics export compliance verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "JAPAN_TRADE_AGREEMENT",
+        "status": "PASS",
+        "message": "Japan-EU trade agreement benefits applied",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-12T13:45:00Z",
+      "dataSource": "EXPORT_SYSTEM",
+      "validationScore": 91,
+      "flags": ["ELECTRONICS_SALES", "JPY_PAYMENT", "EXPORT_TRADE"]
+    }
+  },
+  {
+    "id": "TXN-2024-030",
+    "entryRef": "ENT-240130-001",
+    "bookingDate": "2024-02-13",
+    "valueDate": "2024-02-13",
+    "amount": {
+      "original": 8750.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "ZURICH AUDIT SERVICES AG",
+      "account": "CH9300762011623852999",
+      "bic": "UBSWCHZH80A"
+    },
+    "description": "External Audit Services - Annual Audit 2023 - Engagement: ZAS-AUDIT-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-PRFS",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "AUDIT_INDEPENDENCE",
+        "status": "PASS",
+        "message": "Auditor independence verified",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "AUDIT_FEE_VALIDATION",
+        "status": "PASS",
+        "message": "Audit fee within expected range",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-13T14:00:00Z",
+      "dataSource": "AUDIT_SYSTEM",
+      "validationScore": 98,
+      "flags": ["AUDIT_SERVICES", "ANNUAL_AUDIT", "SWITZERLAND"]
+    }
+  },
+  {
+    "id": "TXN-2024-031",
+    "entryRef": "ENT-240131-001",
+    "bookingDate": "2024-02-14",
+    "valueDate": "2024-02-16",
+    "amount": {
+      "original": 450000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "LUXEMBOURG HOLDINGS SA",
+      "account": "LU280019400644750000",
+      "bic": "BCEELULL"
+    },
+    "description": "Acquisition Payment - Digital Assets Purchase - Agreement: LH-ASSET-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-INVS",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "ACQUISITION_APPROVAL",
+        "status": "FAIL",
+        "message": "Acquisition requires board approval pending",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "DIGITAL_ASSET_VALIDATION",
+        "status": "WARNING",
+        "message": "Digital asset valuation requires independent assessment",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-14T10:30:00Z",
+      "dataSource": "ACQUISITION_SYSTEM",
+      "validationScore": 45,
+      "flags": ["ACQUISITION", "DIGITAL_ASSETS", "BOARD_APPROVAL_REQUIRED"]
+    }
+  },
+  {
+    "id": "TXN-2024-032",
+    "entryRef": "ENT-240132-001",
+    "bookingDate": "2024-02-15",
+    "valueDate": "2024-02-15",
+    "amount": {
+      "original": 22000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "STOCKHOLM VENTURE CAPITAL AB",
+      "account": "SE4550000000058398257999",
+      "bic": "ESSESESS"
+    },
+    "description": "Equity Investment Return - Nordic Tech Fund Q4 2023 - Distribution: SVC-DIST-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-DIVD",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "VENTURE_CAPITAL_CHECK",
+        "status": "PASS",
+        "message": "Venture capital distribution verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "INVESTMENT_PERFORMANCE",
+        "status": "PASS",
+        "message": "Investment performance metrics validated",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-15T11:20:00Z",
+      "dataSource": "VENTURE_CAPITAL_SYSTEM",
+      "validationScore": 89,
+      "flags": ["VENTURE_CAPITAL", "EQUITY_RETURN", "SWEDEN"]
+    }
+  },
+  {
+    "id": "TXN-2024-033",
+    "entryRef": "ENT-240133-001",
+    "bookingDate": "2024-02-16",
+    "valueDate": "2024-02-16",
+    "amount": {
+      "original": 4200.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "BRUSSELS TELECOM SOLUTIONS",
+      "account": "BE68539007547034",
+      "bic": "GKCCBEBB"
+    },
+    "description": "Telecommunications Services - Q1 2024 Enterprise Package - Service: BTS-ENT-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-COMM",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "TELECOM_SERVICE_CHECK",
+        "status": "PASS",
+        "message": "Telecommunications service agreement verified",
+        "severity": "LOW"
+      },
+      {
+        "rule": "ENTERPRISE_PACKAGE_VALIDATION",
+        "status": "PASS",
+        "message": "Enterprise package pricing verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-16T08:15:00Z",
+      "dataSource": "TELECOM_SYSTEM",
+      "validationScore": 96,
+      "flags": ["TELECOMMUNICATIONS", "ENTERPRISE_SERVICE", "BELGIUM"]
+    }
+  },
+  {
+    "id": "TXN-2024-034",
+    "entryRef": "ENT-240134-001",
+    "bookingDate": "2024-02-17",
+    "valueDate": "2024-02-19",
+    "amount": {
+      "original": 175000.00,
+      "currency": "USD"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "BOSTON RESEARCH INSTITUTE",
+      "account": "US1234567890123456789099",
+      "bic": "BOFAUS3N"
+    },
+    "description": "Research & Development Grant - AI Technology Research - Grant: BRI-AI-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-GRNT",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": {
+      "fromCurrency": "USD",
+      "toCurrency": "EUR",
+      "rate": 0.9142,
+      "rateDate": "2024-02-17",
+      "convertedAmount": 159985.00,
+      "provider": "API",
+      "confidence": 94
+    },
+    "validationResults": [
+      {
+        "rule": "RESEARCH_GRANT_CHECK",
+        "status": "WARNING",
+        "message": "R&D grant requires technology transfer agreement",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "IP_RIGHTS_VALIDATION",
+        "status": "WARNING",
+        "message": "Intellectual property rights need clarification",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-17T16:45:00Z",
+      "dataSource": "RD_SYSTEM",
+      "validationScore": 67,
+      "flags": ["RESEARCH_GRANT", "AI_TECHNOLOGY", "IP_RIGHTS"]
+    }
+  },
+  {
+    "id": "TXN-2024-035",
+    "entryRef": "ENT-240135-001",
+    "bookingDate": "2024-02-18",
+    "valueDate": "2024-02-18",
+    "amount": {
+      "original": 9800.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "COPENHAGEN ENVIRONMENTAL SOLUTIONS",
+      "account": "DK5000400440116243",
+      "bic": "NDEADKKK"
+    },
+    "description": "Environmental Compliance Services - Carbon Footprint Assessment Q1 2024 - Project: CES-CARBON-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-ENVR",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "ENVIRONMENTAL_COMPLIANCE",
+        "status": "PASS",
+        "message": "Environmental compliance requirements met",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "CARBON_ASSESSMENT_VALIDATION",
+        "status": "PASS",
+        "message": "Carbon assessment methodology verified",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-18T13:30:00Z",
+      "dataSource": "ENVIRONMENTAL_SYSTEM",
+      "validationScore": 93,
+      "flags": ["ENVIRONMENTAL_SERVICES", "CARBON_ASSESSMENT", "DENMARK"]
+    }
+  },
+  {
+    "id": "TXN-2024-036",
+    "entryRef": "ENT-240136-001",
+    "bookingDate": "2024-02-19",
+    "valueDate": "2024-02-19",
+    "amount": {
+      "original": 55000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "WARSAW LOGISTICS CENTER",
+      "account": "PL61109010140000071219812874",
+      "bic": "WBKPPLPP"
+    },
+    "description": "Logistics Services Revenue - European Distribution Q4 2023 - Contract: WLC-DIST-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-LOGR",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "LOGISTICS_REVENUE_CHECK",
+        "status": "PASS",
+        "message": "Logistics service revenue verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "DISTRIBUTION_AGREEMENT",
+        "status": "PASS",
+        "message": "Distribution agreement terms verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-19T10:45:00Z",
+      "dataSource": "LOGISTICS_SYSTEM",
+      "validationScore": 87,
+      "flags": ["LOGISTICS_REVENUE", "EUROPEAN_DISTRIBUTION", "POLAND"]
+    }
+  },
+  {
+    "id": "TXN-2024-037",
+    "entryRef": "ENT-240137-001",
+    "bookingDate": "2024-02-20",
+    "valueDate": "2024-02-20",
+    "amount": {
+      "original": 13500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "PRAGUE CYBERSECURITY EXPERTS",
+      "account": "CZ6508000000192000145399",
+      "bic": "GIBACZPX"
+    },
+    "description": "Cybersecurity Audit - Penetration Testing Q1 2024 - Engagement: PCE-PENTEST-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-SECY",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "CYBERSECURITY_CLEARANCE",
+        "status": "PASS",
+        "message": "Security clearance verified for vendor",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "PENETRATION_TEST_APPROVAL",
+        "status": "PASS",
+        "message": "Penetration testing scope approved by CISO",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-20T15:20:00Z",
+      "dataSource": "SECURITY_SYSTEM",
+      "validationScore": 96,
+      "flags": ["CYBERSECURITY", "PENETRATION_TESTING", "CZECH_REPUBLIC"]
+    }
+  },
+  {
+    "id": "TXN-2024-038",
+    "entryRef": "ENT-240138-001",
+    "bookingDate": "2024-02-21",
+    "valueDate": "2024-02-23",
+    "amount": {
+      "original": 280000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "ATHENS SHIPPING CONSORTIUM",
+      "account": "GR1601101250000000012300695",
+      "bic": "ETHNGRAA"
+    },
+    "description": "Shipping Services Revenue - Mediterranean Route Q4 2023 - Charter: ASC-MED-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-SHPG",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "SHIPPING_INSURANCE_CHECK",
+        "status": "PASS",
+        "message": "Shipping insurance coverage verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "MARITIME_COMPLIANCE",
+        "status": "WARNING",
+        "message": "Maritime regulations compliance pending verification",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-21T12:10:00Z",
+      "dataSource": "SHIPPING_SYSTEM",
+      "validationScore": 82,
+      "flags": ["SHIPPING_REVENUE", "MEDITERRANEAN_ROUTE", "GREECE"]
+    }
+  },
+  {
+    "id": "TXN-2024-039",
+    "entryRef": "ENT-240139-001",
+    "bookingDate": "2024-02-22",
+    "valueDate": "2024-02-22",
+    "amount": {
+      "original": 6750.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "BUDAPEST TRAINING ACADEMY",
+      "account": "HU42117730161111101800000000",
+      "bic": "OTPVHUHB"
+    },
+    "description": "Employee Training Program - Leadership Development Q1 2024 - Program: BTA-LEAD-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-TRNG",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "TRAINING_BUDGET_CHECK",
+        "status": "PASS",
+        "message": "Training expense within HR budget",
+        "severity": "LOW"
+      },
+      {
+        "rule": "EMPLOYEE_DEVELOPMENT",
+        "status": "PASS",
+        "message": "Training program aligns with development goals",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-22T09:00:00Z",
+      "dataSource": "HR_SYSTEM",
+      "validationScore": 95,
+      "flags": ["EMPLOYEE_TRAINING", "LEADERSHIP_DEVELOPMENT", "HUNGARY"]
+    }
+  },
+  {
+    "id": "TXN-2024-040",
+    "entryRef": "ENT-240140-001",
+    "bookingDate": "2024-02-23",
+    "valueDate": "2024-02-25",
+    "amount": {
+      "original": 195000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "LISBON RENEWABLE ENERGY SA",
+      "account": "PT50000201231234567890154",
+      "bic": "CGDIPTPL"
+    },
+    "description": "Green Energy Investment - Solar Power Project - Investment: LRES-SOLAR-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-ENVR",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "GREEN_INVESTMENT_CHECK",
+        "status": "PASS",
+        "message": "Green investment criteria met",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "ESG_COMPLIANCE",
+        "status": "PASS",
+        "message": "ESG investment guidelines compliance verified",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-23T14:30:00Z",
+      "dataSource": "ESG_INVESTMENT_SYSTEM",
+      "validationScore": 91,
+      "flags": ["GREEN_INVESTMENT", "SOLAR_ENERGY", "PORTUGAL"]
+    }
+  },
+  {
+    "id": "TXN-2024-041",
+    "entryRef": "ENT-240141-001",
+    "bookingDate": "2024-02-24",
+    "valueDate": "2024-02-24",
+    "amount": {
+      "original": 34000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "BUCHAREST TECH INNOVATIONS SRL",
+      "account": "RO49AAAA1B31007593840000",
+      "bic": "RNCBROBU"
+    },
+    "description": "Software Licensing Revenue - Enterprise Solution Q4 2023 - License: BTI-ENT-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-ROYP",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "SOFTWARE_LICENSE_CHECK",
+        "status": "PASS",
+        "message": "Software licensing agreement verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "REVENUE_RECOGNITION",
+        "status": "PASS",
+        "message": "Revenue recognition criteria met",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-24T11:15:00Z",
+      "dataSource": "SOFTWARE_LICENSING_SYSTEM",
+      "validationScore": 94,
+      "flags": ["SOFTWARE_LICENSING", "ENTERPRISE_SOLUTION", "ROMANIA"]
+    }
+  },
+  {
+    "id": "TXN-2024-042",
+    "entryRef": "ENT-240142-001",
+    "bookingDate": "2024-02-25",
+    "valueDate": "2024-02-25",
+    "amount": {
+      "original": 7850.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "VIENNA MEDICAL CONSULTANTS",
+      "account": "AT611904300234573999",
+      "bic": "BKAUATWW"
+    },
+    "description": "Medical Advisory Services - Regulatory Compliance Q1 2024 - Consultation: VMC-REG-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-MEDL",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "MEDICAL_CONSULTANT_CHECK",
+        "status": "PASS",
+        "message": "Medical consultant credentials verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "REGULATORY_ADVICE_VALIDATION",
+        "status": "PASS",
+        "message": "Regulatory advice scope approved",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-25T16:00:00Z",
+      "dataSource": "MEDICAL_ADVISORY_SYSTEM",
+      "validationScore": 92,
+      "flags": ["MEDICAL_ADVISORY", "REGULATORY_COMPLIANCE", "AUSTRIA"]
+    }
+  },
+  {
+    "id": "TXN-2024-043",
+    "entryRef": "ENT-240143-001",
+    "bookingDate": "2024-02-26",
+    "valueDate": "2024-02-28",
+    "amount": {
+      "original": 125000.00,
+      "currency": "GBP"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "LONDON FINTECH ACCELERATOR",
+      "account": "GB29NWBK60161331926999",
+      "bic": "NWBKGB2L"
+    },
+    "description": "Fintech Investment Distribution - Portfolio Exit Q4 2023 - Exit: LFA-EXIT-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-INVS",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": {
+      "fromCurrency": "GBP",
+      "toCurrency": "EUR",
+      "rate": 1.1723,
+      "rateDate": "2024-02-26",
+      "convertedAmount": 146537.50,
+      "provider": "API",
+      "confidence": 87
+    },
+    "validationResults": [
+      {
+        "rule": "FINTECH_INVESTMENT_CHECK",
+        "status": "WARNING",
+        "message": "Fintech investment exit requires tax review",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "PORTFOLIO_EXIT_VALIDATION",
+        "status": "PASS",
+        "message": "Portfolio exit documentation complete",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-26T13:25:00Z",
+      "dataSource": "FINTECH_INVESTMENT_SYSTEM",
+      "validationScore": 79,
+      "flags": ["FINTECH_INVESTMENT", "PORTFOLIO_EXIT", "TAX_REVIEW"]
+    }
+  },
+  {
+    "id": "TXN-2024-044",
+    "entryRef": "ENT-240144-001",
+    "bookingDate": "2024-02-27",
+    "valueDate": "2024-02-27",
+    "amount": {
+      "original": 18500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "TALLINN DIGITAL SERVICES OU",
+      "account": "EE382200221020145685",
+      "bic": "HABAEE2X"
+    },
+    "description": "Digital Transformation Services - Blockchain Implementation Q1 2024 - Project: TDS-BLOCKCHAIN-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-DGTL",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "BLOCKCHAIN_COMPLIANCE",
+        "status": "WARNING",
+        "message": "Blockchain implementation requires regulatory review",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "DIGITAL_SERVICES_CHECK",
+        "status": "PASS",
+        "message": "Digital services vendor qualified",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-27T10:40:00Z",
+      "dataSource": "DIGITAL_TRANSFORMATION_SYSTEM",
+      "validationScore": 73,
+      "flags": ["DIGITAL_TRANSFORMATION", "BLOCKCHAIN", "ESTONIA"]
+    }
+  },
+  {
+    "id": "TXN-2024-045",
+    "entryRef": "ENT-240145-001",
+    "bookingDate": "2024-02-28",
+    "valueDate": "2024-02-28",
+    "amount": {
+      "original": 45000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "RIGA MANUFACTURING GROUP",
+      "account": "LV80BANK0000435195001",
+      "bic": "RIKOLV2X"
+    },
+    "description": "Manufacturing Services Revenue - Industrial Components Q4 2023 - Contract: RMG-IND-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-MNFG",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "MANUFACTURING_QUALITY_CHECK",
+        "status": "PASS",
+        "message": "Manufacturing quality standards verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "INDUSTRIAL_COMPONENT_VALIDATION",
+        "status": "PASS",
+        "message": "Industrial component specifications met",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-28T15:50:00Z",
+      "dataSource": "MANUFACTURING_SYSTEM",
+      "validationScore": 90,
+      "flags": ["MANUFACTURING_REVENUE", "INDUSTRIAL_COMPONENTS", "LATVIA"]
+    }
+  },
+  {
+    "id": "TXN-2024-046",
+    "entryRef": "ENT-240146-001",
+    "bookingDate": "2024-02-29",
+    "valueDate": "2024-03-01",
+    "amount": {
+      "original": 85000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "VILNIUS BIOTECHNOLOGY CENTER",
+      "account": "LT121000011101001000",
+      "bic": "VILNLT22"
+    },
+    "description": "Biotechnology Research Investment - Gene Therapy Project - Investment: VBC-GENE-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-RESF",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "BIOTECH_INVESTMENT_CHECK",
+        "status": "WARNING",
+        "message": "Biotechnology investment requires ethics review",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "GENE_THERAPY_COMPLIANCE",
+        "status": "FAIL",
+        "message": "Gene therapy research requires additional approvals",
+        "severity": "CRITICAL"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-02-29T17:30:00Z",
+      "dataSource": "BIOTECH_INVESTMENT_SYSTEM",
+      "validationScore": 42,
+      "flags": ["BIOTECHNOLOGY_INVESTMENT", "GENE_THERAPY", "ETHICS_REVIEW"]
+    }
+  },
+  {
+    "id": "TXN-2024-047",
+    "entryRef": "ENT-240147-001",
+    "bookingDate": "2024-03-01",
+    "valueDate": "2024-03-01",
+    "amount": {
+      "original": 12750.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "EMPLOYEE ANNA KOWALSKI",
+      "account": "PL61109010140000071219888888",
+      "bic": "WBKPPLPP"
+    },
+    "description": "Salary Payment March 2024 - Employee ID: EMP003 - Product Manager",
+    "bankTransactionCode": "PMNT-ICDT-SALA",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PAYROLL_COMPLIANCE",
+        "status": "PASS",
+        "message": "Payroll payment properly documented",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-01T06:00:00Z",
+      "dataSource": "PAYROLL_SYSTEM",
+      "validationScore": 100,
+      "flags": ["PAYROLL", "RECURRING_PAYMENT", "MANAGEMENT_LEVEL"]
+    }
+  },
+  {
+    "id": "TXN-2024-048",
+    "entryRef": "ENT-240148-001",
+    "bookingDate": "2024-03-02",
+    "valueDate": "2024-03-04",
+    "amount": {
+      "original": 520000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "MALTA CRYPTO EXCHANGE LTD",
+      "account": "MT84MALT011000012345MTLCAST001S",
+      "bic": "MALTMTMT"
+    },
+    "description": "Cryptocurrency Trading Profit - Digital Asset Portfolio Q4 2023 - Trade: MCE-CRYPTO-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-CRPT",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "CRYPTO_TRADING_CHECK",
+        "status": "FAIL",
+        "message": "Cryptocurrency trading requires regulatory approval",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "DIGITAL_ASSET_VALIDATION",
+        "status": "WARNING",
+        "message": "Digital asset classification pending",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-02T12:20:00Z",
+      "dataSource": "CRYPTO_TRADING_SYSTEM",
+      "validationScore": 38,
+      "flags": ["CRYPTOCURRENCY", "DIGITAL_ASSETS", "REGULATORY_APPROVAL"]
+    }
+  },
+  {
+    "id": "TXN-2024-049",
+    "entryRef": "ENT-240149-001",
+    "bookingDate": "2024-03-03",
+    "valueDate": "2024-03-03",
+    "amount": {
+      "original": 28500.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "CYPRUS LEGAL ADVISORY LTD",
+      "account": "CY17002001280000001200527600",
+      "bic": "BCYPCY2N"
+    },
+    "description": "International Legal Services - Cross-Border M&A Advisory Q1 2024 - Case: CLA-MA-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-PRFS",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "INTERNATIONAL_LEGAL_CHECK",
+        "status": "WARNING",
+        "message": "International legal services require compliance review",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "MA_ADVISORY_VALIDATION",
+        "status": "PASS",
+        "message": "M&A advisory credentials verified",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-03T14:45:00Z",
+      "dataSource": "INTERNATIONAL_LEGAL_SYSTEM",
+      "validationScore": 74,
+      "flags": ["INTERNATIONAL_LEGAL", "MA_ADVISORY", "CYPRUS"]
+    }
+  },
+  {
+    "id": "TXN-2024-050",
+    "entryRef": "ENT-240150-001",
+    "bookingDate": "2024-03-04",
+    "valueDate": "2024-03-06",
+    "amount": {
+      "original": 380000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "DUBLIN INVESTMENT FUND ICAV",
+      "account": "IE29AIBK93115212999999",
+      "bic": "AIBKIE2D"
+    },
+    "description": "Fund Distribution - European Equity Fund Q4 2023 - Distribution: DIF-EQUITY-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-FUND",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "FUND_DISTRIBUTION_CHECK",
+        "status": "PASS",
+        "message": "Fund distribution terms verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "EQUITY_FUND_VALIDATION",
+        "status": "PASS",
+        "message": "Equity fund performance metrics validated",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-04T11:10:00Z",
+      "dataSource": "FUND_MANAGEMENT_SYSTEM",
+      "validationScore": 88,
+      "flags": ["FUND_DISTRIBUTION", "EQUITY_FUND", "IRELAND"]
+    }
+  },
+  {
+    "id": "TXN-2024-051",
+    "entryRef": "ENT-240151-001",
+    "bookingDate": "2024-03-05",
+    "valueDate": "2024-03-05",
+    "amount": {
+      "original": 75000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "MONACO WEALTH MANAGEMENT SA",
+      "account": "MC5811222000010123456789030",
+      "bic": "CFMOMCMX"
+    },
+    "description": "Wealth Management Services - Private Banking Q1 2024 - Service: MWM-PB-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-WLTH",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "EXCEPTION",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "WEALTH_MANAGEMENT_CHECK",
+        "status": "WARNING",
+        "message": "Wealth management fees require detailed breakdown",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "PRIVATE_BANKING_VALIDATION",
+        "status": "FAIL",
+        "message": "Private banking services require enhanced disclosure",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-05T16:35:00Z",
+      "dataSource": "WEALTH_MANAGEMENT_SYSTEM",
+      "validationScore": 56,
+      "flags": ["WEALTH_MANAGEMENT", "PRIVATE_BANKING", "MONACO"]
+    }
+  },
+  {
+    "id": "TXN-2024-052",
+    "entryRef": "ENT-240152-001",
+    "bookingDate": "2024-03-06",
+    "valueDate": "2024-03-06",
+    "amount": {
+      "original": 15200.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "ANDORRA RENEWABLE INVESTMENTS",
+      "account": "AD1200012030200359100100",
+      "bic": "BACAADAD"
+    },
+    "description": "Green Bond Interest - Renewable Energy Bond Q4 2023 - Bond: ARI-GREEN-2024-001",
+    "bankTransactionCode": "PMNT-MCOP-INTE",
+    "riskLevel": "LOW",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "GREEN_BOND_CHECK",
+        "status": "PASS",
+        "message": "Green bond criteria compliance verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "INTEREST_CALCULATION",
+        "status": "PASS",
+        "message": "Interest calculation verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-06T09:25:00Z",
+      "dataSource": "GREEN_BOND_SYSTEM",
+      "validationScore": 93,
+      "flags": ["GREEN_BOND", "RENEWABLE_ENERGY", "ANDORRA"]
+    }
+  },
+  {
+    "id": "TXN-2024-053",
+    "entryRef": "ENT-240153-001",
+    "bookingDate": "2024-03-07",
+    "valueDate": "2024-03-09",
+    "amount": {
+      "original": 225000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "LIECHTENSTEIN PRIVATE EQUITY AG",
+      "account": "LI21088100002324013AA",
+      "bic": "LILALI2X"
+    },
+    "description": "Private Equity Investment - Technology Fund Series B - Investment: LPE-TECH-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-PEQT",
+    "riskLevel": "HIGH",
+    "reconciliationStatus": "PENDING",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "PRIVATE_EQUITY_CHECK",
+        "status": "WARNING",
+        "message": "Private equity investment requires investment committee approval",
+        "severity": "CRITICAL"
+      },
+      {
+        "rule": "TECHNOLOGY_FUND_VALIDATION",
+        "status": "PASS",
+        "message": "Technology fund due diligence complete",
+        "severity": "HIGH"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-07T13:15:00Z",
+      "dataSource": "PRIVATE_EQUITY_SYSTEM",
+      "validationScore": 71,
+      "flags": ["PRIVATE_EQUITY", "TECHNOLOGY_FUND", "LIECHTENSTEIN"]
+    }
+  },
+  {
+    "id": "TXN-2024-054",
+    "entryRef": "ENT-240154-001",
+    "bookingDate": "2024-03-08",
+    "valueDate": "2024-03-08",
+    "amount": {
+      "original": 95000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "CRDT",
+    "counterparty": {
+      "name": "SAN MARINO LUXURY GOODS SPA",
+      "account": "SM76P0854009812123456789123",
+      "bic": "CCRSSMMP"
+    },
+    "description": "Luxury Goods Revenue - Premium Collection Q4 2023 - Collection: SMLG-PREM-2024-001",
+    "bankTransactionCode": "PMNT-ICDT-LUXR",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "LUXURY_GOODS_CHECK",
+        "status": "PASS",
+        "message": "Luxury goods authentication verified",
+        "severity": "HIGH"
+      },
+      {
+        "rule": "PREMIUM_COLLECTION_VALIDATION",
+        "status": "PASS",
+        "message": "Premium collection provenance verified",
+        "severity": "MEDIUM"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-08T10:50:00Z",
+      "dataSource": "LUXURY_GOODS_SYSTEM",
+      "validationScore": 89,
+      "flags": ["LUXURY_GOODS", "PREMIUM_COLLECTION", "SAN_MARINO"]
+    }
+  },
+  {
+    "id": "TXN-2024-055",
+    "entryRef": "ENT-240155-001",
+    "bookingDate": "2024-03-09",
+    "valueDate": "2024-03-11",
+    "amount": {
+      "original": 165000.00,
+      "currency": "EUR"
+    },
+    "creditDebitIndicator": "DBIT",
+    "counterparty": {
+      "name": "VATICAN CULTURAL FOUNDATION",
+      "account": "VA59001123000012345678",
+      "bic": "IOPRVAVX"
+    },
+    "description": "Cultural Investment - Art Restoration Project - Donation: VCF-ART-2024-001",
+    "bankTransactionCode": "PMNT-IRCT-CHRT",
+    "riskLevel": "MEDIUM",
+    "reconciliationStatus": "MATCHED",
+    "fxConversion": null,
+    "validationResults": [
+      {
+        "rule": "CULTURAL_INVESTMENT_CHECK",
+        "status": "PASS",
+        "message": "Cultural investment tax benefits verified",
+        "severity": "MEDIUM"
+      },
+      {
+        "rule": "ART_RESTORATION_VALIDATION",
+        "status": "PASS",
+        "message": "Art restoration project credentials verified",
+        "severity": "LOW"
+      }
+    ],
+    "metadata": {
+      "processingTimestamp": "2024-03-09T15:40:00Z",
+      "dataSource": "CULTURAL_INVESTMENT_SYSTEM",
+      "validationScore": 86,
+      "flags": ["CULTURAL_INVESTMENT", "ART_RESTORATION", "VATICAN"]
+    }
+  }
+]
