@@ -7,7 +7,7 @@ export class DataProcessor {
 
   private getBasePath(): string {
     // For GitHub Pages, we need the repository name in the path
-    // For development, we can use relative paths
+    // For development running on localhost, we need root path
     const isDev = import.meta.env.DEV;
     return isDev ? '' : '/ledger-reconciliation-dashboard';
   }

@@ -104,12 +104,19 @@ export function AnalyticsPage() {
   const analyticsData = useMemo(() => {
     if (!transactions.length) return null;
 
-    // Filter transactions by time range
-    const now = new Date();
-    const daysBack = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : timeRange === '90d' ? 90 : 365;
-    const cutoffDate = new Date(now.getTime() - daysBack * 24 * 60 * 60 * 1000);
+    // Filter transactions by time range - fix date filtering to work with the actual data dates
+    let filteredTransactions = transactions;
     
-    let filteredTransactions = transactions.filter(t => new Date(t.valueDate) >= cutoffDate);
+    if (timeRange !== '365d') {
+      // Only apply date filtering for specific time ranges, and use a more reasonable cutoff
+      // Since the data is from 2024, we'll filter relative to the latest transaction date
+      const transactionDates = transactions.map(t => new Date(t.valueDate));
+      const latestDate = new Date(Math.max(...transactionDates.map(d => d.getTime())));
+      const daysBack = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : 90;
+      const cutoffDate = new Date(latestDate.getTime() - daysBack * 24 * 60 * 60 * 1000);
+      
+      filteredTransactions = transactions.filter(t => new Date(t.valueDate) >= cutoffDate);
+    }
     
     if (selectedCurrency !== 'ALL') {
       filteredTransactions = filteredTransactions.filter(t => t.amount.currency === selectedCurrency);

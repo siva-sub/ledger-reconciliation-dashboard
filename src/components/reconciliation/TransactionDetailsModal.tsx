@@ -158,6 +158,10 @@ export function TransactionDetailsModal({ transaction, opened, onClose }: Transa
       padding="md"
       closeOnClickOutside={true}
       closeOnEscape={true}
+      zIndex={10000}
+      centered
+      overlayProps={{ backgroundOpacity: 0.55, blur: 3 }}
+      transitionProps={{ transition: 'fade', duration: 200 }}
     >
       <Stack gap="md">
         {/* Transaction Overview Card */}
