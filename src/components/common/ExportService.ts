@@ -35,7 +35,7 @@ export class ExportService {
         this.exportToJSON(filteredTransactions, options);
         break;
       case 'pdf':
-        this.exportToPDF(filteredTransactions, options);
+        this.exportToPDF(filteredTransactions);
         break;
       default:
         throw new Error('Unsupported export format');
@@ -153,7 +153,8 @@ export class ExportService {
       transactions: options.includeMetadata 
         ? transactions 
         : transactions.map(txn => {
-            const { metadata: _, validationResults: __, ...basicData } = txn;
+            const { metadata, validationResults, ...basicData } = txn;
+            void metadata; void validationResults; // Explicitly ignore these destructured variables
             return basicData;
           })
     };
@@ -174,8 +175,7 @@ export class ExportService {
   }
 
   private static exportToPDF(
-    transactions: FinancialTransaction[], 
-    options: ExportOptions
+    transactions: FinancialTransaction[]
   ): void {
     // For now, create a simple text-based report
     // In a real implementation, you would use a library like jsPDF

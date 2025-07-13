@@ -87,7 +87,7 @@ interface ExecutiveSummaryProps {
 export function ExecutiveSummary({ transactions, timeframe }: ExecutiveSummaryProps) {
   const executiveMetrics = useMemo(() => {
     return calculateExecutiveMetrics(transactions);
-  }, [transactions, timeframe]);
+  }, [transactions]);
 
   const getChangeIcon = (change: number) => {
     if (change > 0) return <IconTrendingUp size={16} color="green" />;

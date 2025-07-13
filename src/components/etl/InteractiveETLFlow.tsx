@@ -123,7 +123,7 @@ export function InteractiveETLFlow({ pipeline, onStepClick, autoPlay = false }: 
     };
 
     runStep();
-  }, [pipeline.steps.length]);
+  }, [pipeline.steps]);
 
   const pauseSimulation = () => {
     setSimulation(prev => ({ ...prev, isRunning: false }));

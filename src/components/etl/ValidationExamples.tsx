@@ -318,7 +318,7 @@ export function ValidationExamples() {
                       try {
                         const input = JSON.parse(customInput || '{}');
                         runValidation(input);
-                      } catch (_) {
+                      } catch {
                         alert('Invalid JSON format');
                       }
                     }}
